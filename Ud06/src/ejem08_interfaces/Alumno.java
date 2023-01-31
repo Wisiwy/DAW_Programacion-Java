@@ -20,7 +20,7 @@ public class Alumno extends Persona implements Obligatorio {
 public void imprimirDatos() {
 		
 	System.out.printf("Nombre: %-10s | Edad: %2d | Dni: %10d | Matricula: %10s \n",this.getNombre(),this.getEdad(),this.getDni(),this.getMatricula());
-
+	System.out.println("test git hub");
 	}
 	
 }
