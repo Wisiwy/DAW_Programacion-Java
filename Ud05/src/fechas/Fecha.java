@@ -54,7 +54,7 @@ public class Fecha {
 	public int tipoMes() {
 		//Si el mes es 4 ,6,9 o 11 devuelve 30 dias si no 31, y si es febrero 2 return 28 si es 2 y bisiesto 29)
 		
-		if (this.mes = 4 || i)
+		if ((this.mes == 4) || (this.mes == 6) || (this.mes == 9) || (this.mes == 11) )
 			return 30;
 		if (this.mes ==2)
 			return 28;

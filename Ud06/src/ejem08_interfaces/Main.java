@@ -3,13 +3,11 @@ package ejem08_interfaces;
 public class Main {
 	public static void main(String[] args) {
 //		Para que exista POLIMORFISMO TIENE que cumplirse
-	//		• Que haya herencia.
-	//		• Que haya sobrescritura de métodos.
-	//		• Definir un objeto con una superclase e instanciarlo con una subclase:
-	//			Empleado emp=new Jefe();
-		
-		
-		
+		// • Que haya herencia.
+		// • Que haya sobrescritura de métodos.
+		// • Definir un objeto con una superclase e instanciarlo con una subclase:
+		// Empleado emp=new Jefe();
+
 //		Persona per = new Persona ("Gaby", 19, 312138129);
 //		per.imprimirDatos();
 //		Profe p = new Profe ("Dani", 39, 889138129, "Programacion");
@@ -26,7 +24,7 @@ public class Main {
 		vector[3] = new Alumno("ALumno", 3, 41234123, "matricula");
 		vector[4] = new Persona("Persona", 444, 41234123);
 		vector[5] = new Persona("Persona", 555, 41234123);
-		vector[0].pedirTodosDatos("Persona TEST",11,14141414);
+		vector[0].pedirTodosDatos("Persona TEST", 11, 14141414);
 
 //		*******Para crear aleatorio
 //		String[] nom = {"Pepe", "Dani", "Jose","Raul"};
@@ -59,56 +57,49 @@ public class Main {
 		for (int i = 0; i < vector.length; i++) {
 			if (vector[i] instanceof Persona) {
 				for (int j = 0; j < vector.length; j++) {
-					if ((vector[j] instanceof Alumno) ||(vector[j] instanceof Profe)) {
+					if ((vector[j] instanceof Alumno) || (vector[j] instanceof Profe)) {
 						Persona aux = new Persona();
-						aux  = vector [j]; 
+						aux = vector[j];
 						vector[j] = vector[i];
 						vector[i] = aux;
-					}
-					else
+					} else
 						j++;
 				}
-			}else
+			} else
 				i++;
-			
+
 		}
-		
-		
+
 		for (int i = 0; i < vector.length; i++) {
 			if (vector[i] instanceof Profe) {
 				for (int j = 0; j < vector.length; j++) {
 					if (vector[j] instanceof Alumno) {
 						Persona aux = new Persona();
-						aux  = vector [j]; 
+						aux = vector[j];
 						vector[j] = vector[i];
 						vector[i] = aux;
-					}
-					else
+					} else
 						j++;
 				}
-			}else
+			} else
 				i++;
-			
+
 		}
-		
-		
-		
-		
+
 		for (int i = 0; i < vector.length; i++) {
-			
+
 			vector[i].imprimirDatos();
 			System.out.println();
-			
+
 		}
-		
-		public static void pintadatos( Object o) {
-			if (o instaceof Profe) {
-				Profe p = (Profe) o;
-			}else if (o instance of Alumno)
-		}
-		
-		
-		
+////		CASTEO de OBJETOS
+//		public static void pintadatos( Object o) {
+//			if (o instaceof Profe) {
+//				Profe p = (Profe) o;
+//			}else if (o instance of Alumno)
+//		}
+//		
+
 	}
 
 }
