@@ -101,6 +101,12 @@ public class Main {
 			
 		}
 		
+		public static void pintadatos( Object o) {
+			if (o instaceof Profe) {
+				Profe p = (Profe) o;
+			}else if (o instance of Alumno)
+		}
+		
 		
 		
 	}
