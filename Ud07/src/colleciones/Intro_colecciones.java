@@ -10,6 +10,9 @@ import java.util.Set;
 public class Intro_colecciones {
 
 	public static void main(String[] args) {
+//		 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+//								ARRAY LIST
+		
 		List aEdad = new ArrayList();
 //		Metodos añadir datos a la coleccion
 		aEdad.add(1);
@@ -26,7 +29,7 @@ public class Intro_colecciones {
 		}
 		System.out.println(aEdad);
 //		 +++++++++++++++++++++++++++++++++++++++++++++++++++++
-//		LINKED LIST
+//												LINKED LIST
 //		Guarda hashCode no el objeto en si. 
 		List aEdad2 = new LinkedList();
 		aEdad2.add("Valor");
@@ -34,9 +37,14 @@ public class Intro_colecciones {
 		aEdad2.add(23);
 		aEdad2.add("Valentia");
 		aEdad2.add("Vitalidad");
+		aEdad.remove(0); // borra en posición 0 
 		System.out.println(aEdad2);
+		
+
+		
+		
 //		 +++++++++++++++++++++++++++++++++++++++++++++++++++++
-//		SET 
+//													SET 
 //		Es como una bolsa los mete. Los ordena con el hashCode. No tienen una posición determinada.  
 		Set aEdad3 = new HashSet();
 		aEdad3.add(2);
