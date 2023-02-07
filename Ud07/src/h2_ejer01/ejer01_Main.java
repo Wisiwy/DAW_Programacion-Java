@@ -3,6 +3,7 @@ package h2_ejer01;
 public class ejer01_Main {
 public static void main(String[] args) {
 	
+	
 	Pila p = new Pila();
 	System.out.println("Elementos: " +p.numElementos());
 	

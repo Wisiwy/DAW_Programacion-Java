@@ -63,7 +63,7 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return String.format("%10s,-%10s Nota 1: %3d | Nota2: %3d |Nota3: %3d |",nom,ape,nota1,nota2,nota3);
+		return String.format("%7s %-10s \n \t Nota 1: %3d | Nota2: %3d |Nota3: %3d |\n",nom,ape,nota1,nota2,nota3);
 	}
 	
 	
