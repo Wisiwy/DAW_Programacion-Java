@@ -31,6 +31,8 @@ public class Colleciones02 {
 //		TREESET: Nos pide que la clase del objeto sea comparable. Para meter los elementos ordenados segun los añadamos. 
 //				Hay que definirle un comparador "Comparable". Además de evitar duplicados. 
 		
+
+		
 	
 	}
 }

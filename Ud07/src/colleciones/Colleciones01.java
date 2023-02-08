@@ -1,9 +1,12 @@
 package colleciones;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Colleciones01 {
@@ -57,7 +60,58 @@ public static void main(String[] args) {
 	Persona p2 = p1;
 	lista.add(p2);
 	lista2.add(p2);
+	
+//	RECORRER COLECCIONES
+//	bruta
+	for (int i = 0; i < lista.size(); i++) {
+		System.out.println(lista.get(i));
+	}
 
+	System.out.println();
+//	con forEach
+	for (Persona persona : lista2) {
+	System.out.println(persona);
+	}
+	
+//	Crear Set
+	Set<Integer> set1= new HashSet();
+	set1.add(31);
+	set1.add(21);
+	set1.add(11);
+//	Recorrer Set con Iterator
+	Iterator<Integer> it = set1.iterator(); // set tienen metodo iterator que crea un iterador. Todas colecciones son iterables.
+	while(it.hasNext()) {
+		Integer valor = it.next(); //recoge el valor
+		System.out.println(valor);
+	}
+	System.out.println();
+//	Collecion recorrer se con foreach
+	for (Integer n: set1) {
+		System.out.println(n);
+	}
+	
+//	Recorrer tipo MAPA
+	Map<Integer, Integer> m1 = new HashMap();
+	m1.put(44, 22);
+	m1.put(24, 12);
+	m1.put(441, 32);
+//	con foreach
+	for (Integer k : m1.keySet()) {
+		
+		System.out.printf("Clve: %d valor:%d \n",k,m1.get(k));
+	}
+//	con Iterator
+	Iterator<Integer> itm = m1.keySet().iterator();
+	while(itm.hasNext()) {
+		Integer valor = itm.next(); //recoge el valor
+		System.out.println(valor);
+	}
+	
+	
+	
+	
+	
+	
 }
 
 	
