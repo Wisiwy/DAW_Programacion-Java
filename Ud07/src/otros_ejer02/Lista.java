@@ -71,8 +71,9 @@ public class Lista {
 			System.out.println("Encontrado");
 		else
 			System.out.println("NO Encontrado");
-			
 		
+		
+		//*********ORDENAR LISTA: COMPARATOR Y COMPARTE TO
 		System.out.println();
 		System.out.println("Ordenar");
 		
@@ -80,6 +81,8 @@ public class Lista {
 //		se ordena con el parametro definido en la clase, en este caso, STRING. 
 		list1.sort(null);
 		//Definir un comparator.
+		
+		
 //		Notacion landa definimos 2 obj (a,b) seran del tipo string porque el comparador es de ese tipo 
 //		-> le ponemos la regla. El comparador devuelve un numero (0, posit, nega) en funcion d num ordeno
 		Comparator<String> comp = (a,b) -> a.length()-b.length(); //esto devuelve (0,posi,nega)
