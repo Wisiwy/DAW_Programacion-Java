@@ -89,5 +89,27 @@ public class Dibujo {
 		}
 
 	}
+	
+	public static void monigote(Integer num) {
+		
+		for (int i = 0; i < num; i++) {
+			
+			System.out.print(" O  ");	
+		}
+		System.out.println();
+		for (int i = 0; i < num; i++) {
+			System.out.print("/|/ ");	
+		}
+		System.out.println();
+		for (int i = 0; i < num; i++) {
+			System.out.print("┘ └ ");	
+		}
+		
+	
+	}
+	public static void main(String[] args) {
+		
+		monigote(4);
+	}
 
 }

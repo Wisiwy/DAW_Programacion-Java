@@ -29,14 +29,13 @@ public class MainFilas {
 //		 * Empieza bucle 5 horas
 		Dibujo.titulo("OFICINA 5 VENTANILLLAS");
 		for (int i = 1; i < 301; i++) {
-			
 
+			// INSERTAMOS UNA TAREA CADA 5 MIN
 			if ((i == 1) || (i % 5 == 0)) {
 				System.out.println();
 				System.out.println("*********************");
 				System.out.println("Min: " + i);
 				System.out.println("*********************");
-
 				InsertarTarea(AsignarCola(ofi));
 			}
 			if (i % 15 == 0) {
@@ -46,23 +45,30 @@ public class MainFilas {
 				System.out.println("*********************");
 
 				for (List<Integer> list : ofi) {
-					System.out.print("Fila: " + MedirCola(list) + "// ");
+					Dibujo.monigote(list.size());
+					System.out.print("Fila: " + MedirCola(list) + "// \n");
+					if (list.size() > 0) {
+						for (Integer tarea : list) {
+							System.out.printf("%2dmin ", tarea);
+						}
+					}
+					System.out.println();
+					
 				}
 				System.out.println();
 			}
 			for (List<Integer> list : ofi) {
 				if (list.size() > 0) {
 //					System.out.println(list.get(list.size()-1));
-					int aux = list.get(list.size()-1);
+					int aux = list.get(list.size() - 1);
 					aux--;
 //					System.out.println("Aux--: " + (aux));
 					if (aux <= 0)
-						list.remove(list.size()-1);
+						list.remove(list.size() - 1);
 					else
-						list.set(list.size()-1, aux);
+						list.set(list.size() - 1, aux);
 					aux = 0;
 				}
-				
 
 			}
 			System.out.println(ofi);
@@ -86,13 +92,13 @@ public class MainFilas {
 
 		Integer aux = (int) (Math.random() * 100);
 		if ((0 <= aux) && (aux < 60)) {
-			list.add(0,30);
-			System.out.printf("Tarea de %2d min.\n", 30 );
+			list.add(0, 30);
+			System.out.printf("Tarea de %2d min.\n", 30);
 		} else if ((60 <= aux) && (aux < 85)) {
-			list.add(0,40);
+			list.add(0, 40);
 			System.out.printf("Tarea de %2d min.\n", 40);
 		} else {
-			list.add(0,60);
+			list.add(0, 60);
 			System.out.printf("Tarea de %2d min.\n", 60);
 		}
 
