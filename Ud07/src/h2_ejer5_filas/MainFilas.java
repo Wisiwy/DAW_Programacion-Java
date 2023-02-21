@@ -53,7 +53,6 @@ public class MainFilas {
 						}
 					}
 					System.out.println();
-					
 				}
 				System.out.println();
 			}
@@ -118,7 +117,7 @@ public class MainFilas {
 	 */
 	private static Integer MedirCola(List<Integer> fila) {
 		return fila.size();
-
+		//Medir el numero de minutos. 
 	}
 
 	/**
