@@ -22,15 +22,12 @@ public class Oficina {
 		
 	}
 
-	public void ServirCola() {
+	public void servirCola() {
 		for (Cola it : ofi) {
-			
-			
-			
 		}
 	}
 	
-	public Cola AsignarCola() {
+	public Cola asignarCola() {
 		
 		Cola aux = null;
 		for (int i = 0; i < ofi.size(); i++) {

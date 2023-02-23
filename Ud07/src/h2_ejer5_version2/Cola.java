@@ -39,7 +39,7 @@ public class Cola {
 	 * @return minutos
 	 */
 	public Integer medirCola() {
-		
+		return null;
 		
 	}
 	

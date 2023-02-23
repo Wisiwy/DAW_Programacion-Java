@@ -9,11 +9,19 @@ public class Main {
 		Oficina ofi = new Oficina(ventanillas);
 		
 		for (int i = 0; i < 300; i++) {
-			
+			if(i%5==0 ) {
+				int tarea = nuevaTarea(t); //generar Tarea
+				System.out.println("Tarea de : " + tarea);
+				ofi.asignarCola(tarea); //Asignar la tarea a la cola más optima
+			}
+			if(i%15==0) {
+				ofi.pintarOfi();
+				Thread.sleep(500);
+			}
+			ofi.pintarOfi();//pintar cada segundo
+			Thread.sleep(1000);
+			ofi.ServirCola();//restar 1 a las cabeceras, si es 0, se quita.
 		}
-		
-		
-		
 		
 	}
 }
