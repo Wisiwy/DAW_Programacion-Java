@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -6,63 +7,131 @@ import java.util.TreeMap;
 import java.util.List;
 import java.util.TreeMap;
 
-
 public class JuegosOlimpicos {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<Atleta> atletismo = new ArrayList<>();
 		rellena(atletismo);
-		atletismo.forEach(System.out::println);
+//		atletismo.forEach(System.out::println);
 		///////////////////////////////////////
 		// .......contin�a a partir de aqu�
 		///////////////////////////////////////
-		
-		
-		//Crear participante por cada atleta y guardarlo en una lista.
+
+		// Crear participante por cada atleta y guardarlo en una lista.
 		List<Participante> participantes = new ArrayList();
 		for (Atleta atleta : atletismo) {
 			for (int i = 0; i < atleta.getPruebas().size(); i++) {
 				Participante auxP;
-				auxP= new Participante(atleta,atleta.getPruebas().get(i),atleta.getTiempos().get(i));
+				auxP = new Participante(atleta, atleta.getPruebas().get(i), atleta.getTiempos().get(i));
 				participantes.add(auxP);
-			} 
-			 
+			}
+
 		}
-		TreeMap<String,List<Participante>> pruebasMap = new TreeMap();
-		System.out.println(participantes);
-		
-		//Crear treeMap con clave prueba de participante y lista de atleta
+		TreeMap<String, List<Participante>> pruebasMap = new TreeMap();
+//		System.out.println(participantes);
+
+		// Crear treeMap con clave prueba de participante y lista de atleta
 		for (Participante participante : participantes) {
 			String keyaux = participante.getPrueba();
-			List<Participante> listAux; 
-			
+			List<Participante> listAux;
+
 			if (pruebasMap.containsKey(keyaux)) {
 				pruebasMap.get(keyaux).add(participante);
-				
-			}else {
+
+			} else {
 				listAux = new ArrayList();
 				listAux.add(participante);
 				pruebasMap.put(keyaux, listAux);
 			}
 		}
-		
-		//Recorrer el map
+
+		// Recorrer el map
 		Iterator<String> it = pruebasMap.keySet().iterator();
+//		while (it.hasNext()) {
+//			List<Participante> listAux2= new ArrayList();
+//			listAux2 = pruebasMap.get(it.next());
+//			for (Participante participante : listAux2) {
+//				System.out.println(participante);
+//			}
+
+//		}
+		// Ordenar las listas del tree map
+		Comparator<Participante> compTiem = (a, b) -> (int) (a.getMarca() * 100) - (int) (b.getMarca() * 100);
 		while (it.hasNext()) {
-			List<Participante> listAux2= new ArrayList();
-			listAux2 = pruebasMap.get(it.hasNext());
-			
+			pruebasMap.get(it.next()).sort(compTiem);
+		}
+		Iterator<String> it2 = pruebasMap.keySet().iterator();
+
+		// Imprimir la key y la lista ordenada.
+		while (it2.hasNext()) {
+			String key = it2.next(); // Recoger la key para poder usarla en el
+			// loop sin pasar varias veces.
+			System.out.println(key);
+
+			List<Participante> listAux2 = new ArrayList();
+			listAux2 = pruebasMap.get(key);
 			for (Participante participante : listAux2) {
 				System.out.println(participante);
 			}
-				
+
 		}
-		//Ordenar las listas del tree map
-		
-		//Imprimir la key y la lista ordenada. 
-		
-		
+
+//********************MEDALLERO HACER
+
+		Iterator<String> it3 = pruebasMap.keySet().iterator();
+
+		// Creamos un medallero.
+		List<Medallas> medallero = new ArrayList();
+
+		while (it3.hasNext()) {
+			List<Participante> aux = pruebasMap.get(it3.next());
+
+			for (int i = 0; i < 3; i++) {
+
+				// Miramos si el pais ganador esta entre los 3 primeros. Y cremos uno en la
+				// lista medallero si no esta
+				String paisGanador = aux.get(i).getAtle().getPais();
+
+				if (!medallero.contains(paisGanador)) {
+					medallero.add(new Medallas(paisGanador));
+					
+				} else {
+
+					// Si es oro gana un oro
+					if (i == 1) {
+						for (Medallas med : medallero) {
+							if (med.equals(paisGanador))
+								med.incOros();
+						}
+					}
+
+					// Si es plata gana un oro
+					if (i == 2) {
+						for (Medallas med : medallero) {
+							if (med.equals(paisGanador))
+								med.incPlatas();
+							;
+						}
+					}
+					// Si es bronce gana un oro
+					if (i == 3) {
+						for (Medallas med : medallero) {
+							if (med.equals(paisGanador))
+								med.incBronces();
+							;
+						}
+					}
+				}
+			}
+
+		}
+
+		// Imprimir medallero
+		for (Medallas medallas : medallero) {
+			System.out.println(medallas);
+		}
+
 	}
 
 	public static void rellena(List<Atleta> a) {

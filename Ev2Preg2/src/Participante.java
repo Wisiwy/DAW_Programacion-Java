@@ -15,7 +15,7 @@ public class Participante {
 
 	@Override
 	public String toString() {
-		return String.format("Participante: %s // %s // %.2f \n",atle.getNombre(),prueba, marca);
+		return String.format("\t %-20s \t// %-15s \t // %10.2f \n",atle.getNombre(),atle.getPais(), marca);
 	}
 
 
