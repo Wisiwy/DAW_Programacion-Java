@@ -27,6 +27,7 @@ public class Medallas {
 	}
 
 	// Lo hace solo el equals
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -73,7 +74,25 @@ public class Medallas {
 
 	@Override
 	public String toString() {
-		return String.format("%s \t Oros: %d || Platas: %d || Bronces: %d", pais, oros, platas, bronces);
+		return String.format("%-15s \t Oros: %2d || Platas: %2d || Bronces: %2d", pais, oros, platas, bronces);
+	}
+
+	public int compareTo(Medallas m) {
+		if (this.getOros() > m.getOros()) {
+			return 1;
+		}else if (this.getOros() == m.getOros()) {
+			if (this.getPlatas() > m.getPlatas()) {
+				return 1;
+			}else if (this.getPlatas() == m.getPlatas()) {
+				if (this.getBronces() > m.getBronces()) {
+					return 1;
+				} else
+					return -1;
+			}else
+				return -1;
+		} else
+			return -1;
+
 	}
 
 }

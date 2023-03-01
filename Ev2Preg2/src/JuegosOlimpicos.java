@@ -81,55 +81,74 @@ public class JuegosOlimpicos {
 
 		Iterator<String> it3 = pruebasMap.keySet().iterator();
 
+
 		// Creamos un medallero.
 		List<Medallas> medallero = new ArrayList();
 
 		while (it3.hasNext()) {
 			List<Participante> aux = pruebasMap.get(it3.next());
-
+//			System.out.println(it3.next());
+//			System.out.println();
+			
+			
+			
 			for (int i = 0; i < 3; i++) {
+			
 
 				// Miramos si el pais ganador esta entre los 3 primeros. Y cremos uno en la
 				// lista medallero si no esta
 				String paisGanador = aux.get(i).getAtle().getPais();
+				System.out.println("paisGanador " + (i+1) + "- " + paisGanador);
+				// Medalla auxiliar para comprobar si medallero la contiene
+				Medallas auxMed = new Medallas(paisGanador);
 
-				if (!medallero.contains(paisGanador)) {
-					medallero.add(new Medallas(paisGanador));
-					
+				if (!medallero.contains(auxMed)) {
+					System.out.println("No hay medallero creado");
+					Medallas aux2 = new Medallas(paisGanador);
+					if (i == 0)
+						aux2.incOros();
+					if (i == 1)
+						aux2.incPlatas();
+					if (i == 2)
+						aux2.incBronces();
+					medallero.add(aux2);
+										
 				} else {
+					for (Medallas med : medallero) {
+						if (med.getPais() == paisGanador) {
+							System.out.println("Encuentra pais y aumenta medalla");
 
-					// Si es oro gana un oro
-					if (i == 1) {
-						for (Medallas med : medallero) {
-							if (med.equals(paisGanador))
+							if (i == 0)
 								med.incOros();
-						}
-					}
-
-					// Si es plata gana un oro
-					if (i == 2) {
-						for (Medallas med : medallero) {
-							if (med.equals(paisGanador))
+							if (i == 1)
 								med.incPlatas();
-							;
-						}
-					}
-					// Si es bronce gana un oro
-					if (i == 3) {
-						for (Medallas med : medallero) {
-							if (med.equals(paisGanador))
+							if (i == 2)
 								med.incBronces();
-							;
 						}
 					}
+
 				}
+
 			}
-
+			System.out.println("");
+			System.out.println("Fin de prueba");
+			System.out.println("");
 		}
-
-		// Imprimir medallero
+		System.out.println();
+		System.out.println("-----------------MEDALLERO------------------------");
+		System.out.println();
 		for (Medallas medallas : medallero) {
-			System.out.println(medallas);
+			System.out.printf("%d - %s \n",(medallero.indexOf(medallas)+1),medallas);
+		}
+		//Ordenar medallero
+		Comparator<Medallas> comMed = (a,b) -> b.compareTo(a);
+		medallero.sort(comMed);
+		// Imprimir medallero
+		System.out.println();
+		System.out.println("-----------------MEDALLERO ORDENADO------------------------");
+		System.out.println();
+		for (Medallas medallas : medallero) {
+			System.out.printf("%d - %s \n",(medallero.indexOf(medallas)+1),medallas);
 		}
 
 	}
