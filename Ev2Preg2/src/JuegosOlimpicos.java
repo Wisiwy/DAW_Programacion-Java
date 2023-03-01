@@ -124,7 +124,6 @@ public class JuegosOlimpicos {
 					}
 				}
 			}
-
 		}
 
 		// Imprimir medallero
