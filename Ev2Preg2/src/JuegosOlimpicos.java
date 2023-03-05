@@ -90,10 +90,7 @@ public class JuegosOlimpicos {
 //			System.out.println(it3.next());
 //			System.out.println();
 			
-			
-			
 			for (int i = 0; i < 3; i++) {
-			
 
 				// Miramos si el pais ganador esta entre los 3 primeros. Y cremos uno en la
 				// lista medallero si no esta
@@ -130,9 +127,12 @@ public class JuegosOlimpicos {
 				}
 
 			}
+<<<<<<< HEAD
 			System.out.println("");
 			System.out.println("Fin de prueba");
 			System.out.println("");
+=======
+>>>>>>> refs/remotes/origin/No_electricidad
 		}
 		System.out.println();
 		System.out.println("-----------------MEDALLERO------------------------");
