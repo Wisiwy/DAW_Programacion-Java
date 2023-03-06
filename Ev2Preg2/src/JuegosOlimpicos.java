@@ -127,12 +127,10 @@ public class JuegosOlimpicos {
 				}
 
 			}
-<<<<<<< HEAD
 			System.out.println("");
 			System.out.println("Fin de prueba");
 			System.out.println("");
-=======
->>>>>>> refs/remotes/origin/No_electricidad
+
 		}
 		System.out.println();
 		System.out.println("-----------------MEDALLERO------------------------");

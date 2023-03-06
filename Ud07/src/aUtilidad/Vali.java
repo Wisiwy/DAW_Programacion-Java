@@ -53,7 +53,7 @@ public class Vali {
 	 * @param num - Numero a comparar
 	 * @param menor - Rango menor
 	 * @param mayor - Rango mayor
-	 * @return true or false
+	 * @return true (dentro) false(fuera)
 	 */
 	public static boolean entreRangoNum(int num, int menor, int mayor ) {
 

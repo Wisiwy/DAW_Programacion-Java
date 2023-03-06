@@ -24,8 +24,36 @@ public class Leer {
 			valor = teclado.nextLine();
 			if (esNum(valor))
 				num = Integer.parseInt(valor);
-			System.err.println("Error. Intro entero.");
+			else
+				System.err.println("Error. Intro entero.");
 		} while (esNum(valor) == false);
+		return num;
+
+	}
+	/**
+	 * Leer entero entre 1 y numero maximos
+	 * @param str , integer numero maximo
+	 * @return opcion elegida
+	 */
+	public static Integer leerIntRango(String str,Integer numMin, Integer numMax) {
+		String valor;
+		Integer num = 0;
+		Scanner teclado = new Scanner(System.in);
+		boolean aux;
+		System.out.print(str);
+
+		do {
+			valor = teclado.nextLine();
+			if (esNum(valor)) {
+				num = Integer.parseInt(valor);
+				if (!Vali.entreRangoNum(num, numMin, numMax))
+					System.err.println("Error. Intro entero.");
+
+		}
+			else
+				System.err.println("Error. Intro entero.");
+		} while (!esNum(valor) || !Vali.entreRangoNum(num, numMin, numMax));
+		
 		return num;
 
 	}

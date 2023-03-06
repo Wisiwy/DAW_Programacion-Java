@@ -7,7 +7,7 @@ public class Dibujo {
 	public static void titulo(String str) {
 		System.out.printf("%n-------------------------------------%n");
 		System.out.println("        " + str + "         ");
-		System.out.println("--------------------------------------");
+		System.out.println("-------------------------------------");
 	}
 
 	/**DIBUJAR MENU
@@ -21,27 +21,30 @@ public class Dibujo {
 	public static int menu(String[] opc) {
 		
 //		PINTA MENU
+		System.out.println("-------------------------------------");
 		System.out.println("Elige una opcion:");
 		for (int i = 0; i < opc.length; i++) {
 			System.out.printf("%2d - %s%n", (i + 1), opc[i]);
 		}
 		System.out.println("\n0 - Salir del programa.");
+		System.out.println("-------------------------------------");
+		
 //		VALIDA que sea numero y que este en rango de opciones
 		int select = 0;
 		Scanner tec = new Scanner(System.in);
 		String aux;
 		do {
 			aux = tec.nextLine();
-			if (Vali.esNum(aux) == true)
+			if (Vali.esNum(aux))
 				select = Integer.parseInt(aux);
-			if (Vali.esNum(aux) == false || Vali.entreRangoNum(select, 0, opc.length) == false)
+			else if (!Vali.esNum(aux) || !Vali.entreRangoNum(select, 0, opc.length))
 				System.err.printf("Dato introducido erroneo. Prueba de nuevo [0 -%2d].", opc.length);
 		} while (Vali.esNum(aux) == false || Vali.entreRangoNum(select, 0, opc.length) == false);
 
 //		System.out.println("numero elegido " + select); Sirvio para debugar.
 		return select;
 	}
-
+	
 	/**
 	 * Pinta una matriz <strong>int</strong> <br>
 	 * Si la matriz es de otro tipo de datos castear. (char)
