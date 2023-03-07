@@ -34,12 +34,18 @@ public class Main {
 				System.out.println(aux2);
 				System.out.println("|************************|");
 				
+				//Añadir billete a coleccion de billetes  para ordenar.
+				
 			}
 			case 2: {
 				anularBillete();
+				
 			}
 			case 3: {
-				consultaTrenes();
+//				consultarTrenes();
+//				consultarBilletes();
+//					//ordnar billetes por ...
+				
 			}
 			case 0: {
 				break;
@@ -61,8 +67,8 @@ public class Main {
 	}
 
 	private static void anularBillete() {
-		// TODO Auto-generated method stub
-
+		
+TA
 	}
 
 	private static Billete ventaBillete(ArrayList<Tren> trenes) {
@@ -76,7 +82,8 @@ public class Main {
 		// Sumar asiento en vagon.
 			//Coger vagon
 		Vagon vagBill = auxTren.getVagon();
-			//Asigno asiento y recogo billete
+			//Asigno asiento y recogo billete.  
+			//Mirar si comprueba si los asientos de los vagones estan vacios. 
 		Integer numAsi = vagBill.sumarAsiento();
 		// Poner elegir asiento, vagon y tren.
 			//Set numtren y hora
